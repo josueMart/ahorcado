@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Objetos</title>
-	<script type="text/javascript" src=""> </script>
+	<title>Ahorcado</title>
+	<script type="text/javascript" src="ahorcado.js"> </script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+<header class="encabezado">
+	<h1>Zoenat playgames</h1>
+</header>
+
+<h2>Adivina letra a letra</h2>
+<canvas id="c" class="canvas"></canvas>
+	<p>Elije una letra: 
+	<input type="text" class="letra">
+	<input type="button" class="boton" value="Boom!">
+	</p>
+	<h2 class="pista">_ _ _ _ _ _ _ _ _ _ _</h2>
+	<script>
+	iniciar();
+	</script>
 </body>
 </html>
