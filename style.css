@@ -1,16 +1,24 @@
 body
 {
 	text-align: center;
-	background-color: white;
+	font-family: 'Montserrat', sans-serif;
 
 }
+
 .encabezado
 {
-	background-color: yellow;
-	padding: 2em;
+	background-color: #65B031;
+	
 	margin: 0;
+	border-radius: 45%;
+}
+.titulo
+{
+	font-size: 80px;
+	text-align: center;
+	color: white;
 }
 #c
 {
-
+	
 }

@@ -1,5 +1,5 @@
-var palabra="tamarindo";
-var hombre;
+var palabra="Amor";
+var hombre, l, espacio;
 //Declaracion de la clase ahorcado
 var Ahorcado = function(con)
 {
@@ -94,8 +94,6 @@ Ahorcado.prototype.dibujar=function()
 			dibujo.stroke();
 			dibujo.closePath();
 
-
-
 		}
 
 		}
@@ -111,28 +109,89 @@ Ahorcado.prototype.trazar=function()
 	if(this.intentos >= this.maximo)
 	{
 		this.vivo=false;
-		alert("Estas muerto!!!");
+
 	}
 	this.dibujar();
 }
 
 function iniciar()
 {
+	l= document.getElementById("letra");
+	var b=document.getElementById("boton");
 	var canvas=document.getElementById("c");
 	canvas.width=500;
 	canvas.height=400;
 	var contexto = canvas.getContext("2d");
 	hombre=new Ahorcado(contexto);
-	hombre.trazar();
-	hombre.trazar();
-	hombre.trazar();
-	hombre.trazar();
-	hombre.trazar();
+	palabra =palabra.toUpperCase();
+//Declaro un array con n espacion de acuerdo a largo de la palabra
+	espacio=new Array(palabra.length);
+	//agregamos una funcion que se dispare al dar clic al boton
+
+	b.addEventListener("click", agregarLetra);
+	mostrarPista(espacio);
+
+}
+
+function agregarLetra()
+{
+	var letra = l.value;
+	
+	mostrarPalabra(palabra, hombre, letra);
+
+}
 
 
+function mostrarPalabra(palabra, ahorcado, letra)
+{
+	var encontrado=false;
+	var p;
+	letra=letra.toUpperCase();
+	for (p in palabra)
+	{
+		if(letra == palabra[p])
+		{
+			espacio[p]= letra;
+			encontre = true;
+		}
+
+	}
+	mostrarPista(espacio);
+	//Si no lo encontre
+	if(!encontrado)
+	{
+		ahorcado.trazar();
+
+	}
+	if(!ahorcado.vivo)
+	{
+		//mostrar la palabra entera
 
 
+	}
 
+}
+
+function mostrarPista(espacio)
+{
+	var pista= document.getElementById("pista");
+	var text="";
+	var i = 0;
+	var largo =espacio.length;
+
+	for(i = 0; i < largo; i++)
+	{
+		if(espacio[i] != undefined)
+		{
+			text = text + espacio[i] + " ";
+			
+		}else
+		{
+			text += "_ ";
+		}
+
+	}
+	pista.innerText = text;
 
 }
 

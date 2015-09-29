@@ -5,19 +5,21 @@
 	<title>Ahorcado</title>
 	<script type="text/javascript" src="ahorcado.js"> </script>
 	<link rel="stylesheet" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <header class="encabezado">
-	<h1>Zoenat playgames</h1>
+	<h1 class="titulo">zoeNat playGames</h1>
 </header>
 
 <h2>Adivina letra a letra</h2>
-<canvas id="c" class="canvas"></canvas>
-	<p>Elije una letra: 
-	<input type="text" class="letra">
-	<input type="button" class="boton" value="Boom!">
+<p>
+	<input type="text" id="letra" placeholder="Elije una letra:">
+	<input type="button" id="boton" value="Boom!" >
 	</p>
-	<h2 class="pista">_ _ _ _ _ _ _ _ _ _ _</h2>
+	<h2 id="pista">_ _ _ _ _ _ _ _ _ _ _</h2>
+<canvas id="c" class="canvas"></canvas>
+	
 	<script>
 	iniciar();
 	</script>
